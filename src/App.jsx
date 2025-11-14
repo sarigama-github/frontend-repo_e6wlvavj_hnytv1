@@ -56,6 +56,13 @@ const CERTS = [
   'Race International Conference',
 ]
 
+const LINKS = {
+  email: 'girishraut2003@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/girish-raut-814181235/',
+  github: 'https://github.com/clashingera',
+  resume: 'https://drive.google.com/file/d/1-fS-r5bd1FrfePu0Tnp_Q_hTG3-FSQyt/view?usp=sharing',
+}
+
 function Badge({ children }) {
   return (
     <span className="inline-flex items-center rounded-full bg-slate-800/80 text-slate-100 px-3 py-1 text-xs font-medium ring-1 ring-slate-700/80">
@@ -116,7 +123,7 @@ function Typewriter({ text, speed = 40 }) {
 }
 
 function KeyboardWave() {
-  const keys = ['J', 'A', 'V', 'A', ' ', 'C', 'O', 'D', 'E']
+  const keys = ['C', 'O', 'D', 'E', ' ', 'J', 'A', 'V', 'A']
   return (
     <div className="flex items-center gap-1.5">
       {keys.map((k, i) => (
@@ -160,20 +167,20 @@ export default function App() {
       {/* Hero */}
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(70%_50%_at_50%_0%,rgba(56,189,248,0.15),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center py-18 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-center py-12 sm:py-16">
           <div className="relative z-10">
             <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-sm font-semibold tracking-widest text-sky-400 uppercase">
               Portfolio
             </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+            <motion.h1 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
               {NAME}
             </motion.h1>
-            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="mt-5 text-base sm:text-lg text-slate-300 max-w-xl">
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
               {BIO}
             </motion.p>
 
             {/* Typewriter + keyboard wave */}
-            <div className="mt-6 space-y-3">
+            <div className="mt-5 space-y-3">
               <Typewriter text={codeLine} />
               <div className="flex items-center gap-3 text-slate-300">
                 <Keyboard size={18} className="text-slate-400" />
@@ -181,27 +188,22 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-slate-100 text-slate-950 px-5 py-3 text-sm font-semibold hover:bg-white transition-colors">
                 View Projects <ChevronRight size={16} />
               </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-slate-900 ring-1 ring-slate-700 px-5 py-3 text-sm font-medium hover:bg-slate-800 transition-colors">
-                Contact Me <Mail size={16} />
+              <a href={`mailto:${LINKS.email}`} className="inline-flex items-center gap-2 rounded-full bg-slate-900 ring-1 ring-slate-700 px-5 py-3 text-sm font-medium hover:bg-slate-800 transition-colors">
+                Email Me <Mail size={16} />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 text-sky-300 ring-1 ring-sky-500/30 px-5 py-3 text-sm font-medium hover:bg-sky-500/15 transition-colors">
+              <a href={LINKS.resume} target="_blank" className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 text-sky-300 ring-1 ring-sky-500/30 px-5 py-3 text-sm font-medium hover:bg-sky-500/15 transition-colors">
                 <Download size={16} /> Download Resume
               </a>
             </div>
           </div>
 
-          {/* 3D Hero (scene) */}
-          <div className="relative h-[380px] sm:h-[460px] lg:h-[520px]">
+          {/* 3D Hero (single friendly 3D section) */}
+          <div className="relative h-[340px] sm:h-[420px] lg:h-[480px]">
             <div className="absolute inset-0 rounded-2xl overflow-hidden ring-1 ring-slate-800 bg-slate-900/60">
-              <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-            </div>
-
-            {/* 3D Profile Avatar bubble (can be swapped with a coding-boy Spline URL) */}
-            <div className="hidden sm:block absolute -bottom-5 -left-5 w-40 h-40 rounded-2xl overflow-hidden ring-1 ring-slate-800 bg-slate-900/70">
               <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
             </div>
           </div>
@@ -209,7 +211,7 @@ export default function App() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 sm:py-24">
+      <section id="about" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionTitle eyebrow="About" title="A quick intro" subtitle="Driven by problem-solving, clean code, and building useful things." />
           <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -218,18 +220,12 @@ export default function App() {
                 I enjoy turning ideas into real, usable products. My interests include backend services, intuitive frontend experiences, and deploying projects so people can actually use them. I collaborate well with teams and love learning new tools and patterns that improve developer experience.
               </p>
             </div>
-            <div className="rounded-xl ring-1 ring-slate-800 p-0 overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
-              <div className="h-44">
-                {/* 3D animated profile icon of a programmer (replace URL with your coding-boy Spline) */}
-                <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-              </div>
-              <div className="p-4">
-                <div className="flex items-center gap-3 font-semibold text-slate-100"><MapPin size={18} /> Pune, Maharashtra, India</div>
-                <div className="mt-2 flex items-center gap-3 text-slate-300"><Mail size={18} /> Email</div>
-                <div className="mt-4 flex gap-3">
-                  <a href="https://www.linkedin.com" target="_blank" className="inline-flex items-center gap-2 text-sky-300 hover:underline"><Linkedin size={18}/>LinkedIn</a>
-                  <a href="https://github.com" target="_blank" className="inline-flex items-center gap-2 text-slate-200 hover:underline"><Github size={18}/>GitHub</a>
-                </div>
+            <div className="rounded-xl ring-1 ring-slate-800 p-6 bg-gradient-to-br from-slate-900 to-slate-800">
+              <div className="flex items-center gap-3 font-semibold text-slate-100"><MapPin size={18} /> Pune, Maharashtra, India</div>
+              <a href={`mailto:${LINKS.email}`} className="mt-2 flex items-center gap-3 text-slate-300 hover:underline"><Mail size={18} /> {LINKS.email}</a>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href={LINKS.linkedin} target="_blank" className="inline-flex items-center gap-2 text-sky-300 hover:underline"><Linkedin size={18}/>LinkedIn</a>
+                <a href={LINKS.github} target="_blank" className="inline-flex items-center gap-2 text-slate-200 hover:underline"><Github size={18}/>GitHub</a>
               </div>
             </div>
           </div>
@@ -314,9 +310,10 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionTitle eyebrow="Contact" title="Let’s connect" subtitle="I’m open to roles, collaborations, and interesting problems to solve." />
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="mailto:someone@example.com" className="inline-flex items-center gap-2 rounded-lg bg-sky-500 text-slate-950 px-4 py-3 text-sm font-semibold hover:bg-sky-400"><Mail size={18}/>Email</a>
-            <a href="https://www.linkedin.com" target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-700 px-4 py-3 text-sm text-slate-100 font-medium hover:bg-slate-800"><Linkedin size={18}/>LinkedIn</a>
-            <a href="https://github.com" target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-700 px-4 py-3 text-sm text-slate-100 font-medium hover:bg-slate-800"><Github size={18}/>GitHub</a>
+            <a href={`mailto:${LINKS.email}`} className="inline-flex items-center gap-2 rounded-lg bg-sky-500 text-slate-950 px-4 py-3 text-sm font-semibold hover:bg-sky-400"><Mail size={18}/>Email</a>
+            <a href={LINKS.linkedin} target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-700 px-4 py-3 text-sm text-slate-100 font-medium hover:bg-slate-800"><Linkedin size={18}/>LinkedIn</a>
+            <a href={LINKS.github} target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-700 px-4 py-3 text-sm text-slate-100 font-medium hover:bg-slate-800"><Github size={18}/>GitHub</a>
+            <a href={LINKS.resume} target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-700 px-4 py-3 text-sm text-slate-100 font-medium hover:bg-slate-800"><Download size={18}/> Resume</a>
             <div className="inline-flex items-center gap-2 rounded-lg bg-slate-900 ring-1 ring-slate-800 px-4 py-3 text-sm text-slate-200"><MapPin size={18}/> Pune, Maharashtra, India</div>
           </div>
         </div>
