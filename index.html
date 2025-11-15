@@ -8,29 +8,33 @@
     <meta name="description" content="Portfolio of Girish Raut – Computer Engineering student passionate about Java, APIs, problem-solving, and building useful products." />
     <meta name="keywords" content="Girish Raut, Girish, Portfolio, Software Developer, Computer Engineering, Java, APIs, Projects, Pune, India" />
     <meta name="author" content="Girish Raut" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Girish Raut | Portfolio" />
     <meta property="og:description" content="Computer Engineering student passionate about Java, APIs, and building useful products." />
     <meta property="og:url" content="https://girishraut.dev" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="/og-image.svg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Girish Raut | Portfolio" />
     <meta name="twitter:description" content="Computer Engineering student passionate about Java, APIs, and building useful products." />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="/og-image.svg" />
 
     <!-- PWA / Theming -->
     <meta name="theme-color" content="#020617" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://girishraut.dev" />
 
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#0ea5e9" />
+    <!-- Optional: supply an Apple touch icon (PNG recommended). Using existing social image as a fallback. -->
+    <link rel="apple-touch-icon" href="/og-image.svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +46,7 @@
     <!-- Google Site Verification (file also placed in /public) -->
     <meta name="google-site-verification" content="googled7bfaac3682b364a" />
 
-    <!-- Structured Data -->
+    <!-- Structured Data: Person (primary) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -51,6 +55,37 @@
         "jobTitle": "Computer Engineering Student",
         "email": "mailto:girishraut2003@gmail.com",
         "url": "https://girishraut.dev",
+        "image": "/og-image.svg",
+        "sameAs": [
+          "https://github.com/clashingera",
+          "https://www.linkedin.com/in/girish-raut-814181235/"
+        ]
+      }
+    </script>
+
+    <!-- Structured Data: WebSite with SearchAction (sitelinks search box eligibility) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://girishraut.dev",
+        "name": "Girish Raut | Portfolio",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://girishraut.dev/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Structured Data: Organization (helps show social profiles alongside brand queries) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Girish Raut",
+        "url": "https://girishraut.dev",
+        "logo": "/og-image.svg",
         "sameAs": [
           "https://github.com/clashingera",
           "https://www.linkedin.com/in/girish-raut-814181235/"
