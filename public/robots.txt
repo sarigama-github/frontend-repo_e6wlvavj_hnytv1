@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://girishraut.dev/sitemap.xml
+Sitemap: https://girishraut.dev/googlesitemap/sitemap.xml

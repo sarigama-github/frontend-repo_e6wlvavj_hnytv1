@@ -22,7 +22,7 @@ const EDUCATION = [
 ]
 
 const SKILLS = [
-  'Java', 'GitHub', 'HTML', 'Teamwork', 'REST-API', 'Development', 'Management', 'SQL', 'SDLC', 'Code', 'Team', 'Git'
+  'Programming', 'GitHub', 'HTML', 'Teamwork', 'REST-API', 'Development', 'Management', 'SQL', 'SDLC', 'Clean Code', 'Team', 'Git'
 ]
 
 const PROJECTS = [
@@ -35,7 +35,7 @@ const PROJECTS = [
   },
   {
     title: 'Portfolio Website',
-    stack: ['HTML', 'CSS', 'Lordicon'],
+    stack: ['HTML', 'CSS', 'Animations'],
     description:
       'Interactive portfolio with animated project cards, timeline layout, and flip-card effects.',
     link: '#projects',
@@ -123,7 +123,7 @@ function Typewriter({ text, speed = 40 }) {
 }
 
 function KeyboardWave() {
-  const keys = ['C', 'O', 'D', 'E', ' ', 'J', 'A', 'V', 'A']
+  const keys = ['C', 'O', 'D', 'E', ' ', 'D', 'E', 'V']
   return (
     <div className="flex items-center gap-1.5">
       {keys.map((k, i) => (
@@ -142,7 +142,7 @@ function KeyboardWave() {
 }
 
 export default function App() {
-  const codeLine = 'const developer = { role: "Programmer", loves: ["Java", "APIs", "Teamwork"] }'
+  const codeLine = 'const professional = { role: "Developer", loves: ["Problem-solving", "Clean code", "Learning"] }'
 
   return (
     <div className="min-h-screen w-full bg-slate-950 text-slate-100">
